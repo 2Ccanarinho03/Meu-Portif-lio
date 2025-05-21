@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --cor-principal: #E75480;
+    --cor-secundaria: #C71585;
+    --cor-destaque: #FF69B4;
+    --cor-fundo: #FFF0F5;
+    --cor-texto: #8B008B;
+    --cor-sombra: rgba(139, 0, 139, 0.3);
+    --cor-fundo-escuro: #1C1C1C;
+    --cor-texto-escuro: #FFD1DC;
+}
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 20px;
+    position: relative;
+
+}
+
+/* Estilos do avatar */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--cor-secundaria);
+    box-shadow: 0px 0px 10px var(--cor-sombra);
+    object-fit: cover;
+}
+
+/* Animações */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+.fade-in { animation: fadeIn 1s ease-in-out; }
+.slide-in { animation: slideIn 1s ease-in-out; }
+.bounce:hover { animation: bounce 0.5s ease-in-out; }
+
+/* Estilos dos cards */
+.card {
+    background: linear-gradient(180deg, var(--cor-secundaria) 40%, var(--cor-destaque) 100%);
+    border: 2px solid var(--cor-secundaria);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px var(--cor-sombra);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 12px var(--cor-sombra);
+    border-color: var(--cor-principal);
+}
+
+/* Botões interativos */
+.btn-primary {
+    background: linear-gradient(45deg, var(--cor-secundaria), var(--cor-principal));
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: var(--cor-destaque);
+}
+
+/* Modo escuro */
+.dark-mode {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+.dark-mode h1, .dark-mode h2 {
+    color: var(--cor-destaque);
+}
+
+/* Botão de alternância para modo escuro */
+.toggle-dark-mode {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--cor-secundaria), var(--cor-principal));
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.toggle-dark-mode:hover {
+    background: var(--cor-destaque);
+}
